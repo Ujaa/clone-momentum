@@ -142,3 +142,79 @@ player.lastName = "lee";
 
 // const로 object를 선언했어도 object 안의 값을 바꾸는 것은 괜찮다.
 ```
+
+## 2.7 **Functions part One**
+
+```jsx
+// FUNCTION: 코드를 캡슐화해서 실행을 여러 번 할 수 있다.
+
+function sayHello() {
+  console.log("hello! my name is yujin");
+}
+
+sayHello();
+```
+
+## **2.8 Functions part Two**
+
+```jsx
+function sayHello(nameOfPerson, age) {
+  // 인수는 함수 안에서만 살아있다.
+  console.log(
+    "hello! my name is" + nameOfPerson + " and I'm " + age + " years old."
+  );
+}
+
+sayHello("yujin", 12);
+
+const player = {
+  name: "nco",
+  sayHello: function (otherPersonsName) {
+    console.log(otherPersonsName);
+  },
+};
+
+player.sayHello();
+```
+
+## **2.9 Recap**
+
+```jsx
+// 데이터의 종류 = 자바스크립트가 이해할 수 있는 데이터의 종류
+
+// String
+"hello";
+// number
+5;
+// boolean
+true;
+false;
+// null(비어있음을 의미)
+null;
+// undefined(변수가 존재하지만 아무 것도 넣지 않은 상태)
+undefined;
+// variable(const, let)
+const a = 5;
+let isFact = true;
+isFact = false;
+// array
+const nums = [1, 2, 3];
+const everyhings = ["tomato", "pizza", 1, null];
+everyhings[0]; // 'tomato
+everyhings[0] = "potato";
+everyhings.push("meat");
+```
+
+## **2.10 Recap II**
+
+## **2.11 Returns**
+
+## **2.12 Recap**
+
+## **2.13 Conditionals**
+
+## **2.14 Conditionals part Two**
+
+## **2.15 Conditionals part Three**
+
+## **2.16 Recap**

@@ -1,21 +1,23 @@
-// 게임을 만들고 있다고 상상해보기
-const playerName = "yujin";
-const playerPoints = 1212;
-const playerHandsome = true;
-const playerFat = "little bit";
+// 데이터의 종류 = 자바스크립트가 이해할 수 있는 데이터의 종류
 
-const player = {
-  name: "yujin",
-  points: 1212,
-};
-
-//access
-player.name;
-
-// change value
-player.points = 123;
-
-// add value
-player.lastName = "lee";
-
-// const로 object를 선언했어도 object 안의 값을 바꾸는 것은 괜찮다.
+// String
+"hello";
+// number
+5;
+// boolean
+true;
+false;
+// null(비어있음을 의미)
+null;
+// undefined(변수가 존재하지만 아무 것도 넣지 않은 상태)
+undefined;
+// variable(const, let)
+const a = 5;
+let isFact = true;
+isFact = false;
+// array
+const nums = [1, 2, 3];
+const everyhings = ["tomato", "pizza", 1, null];
+everyhings[0]; // 'tomato
+everyhings[0] = "potato";
+everyhings.push("meat");
