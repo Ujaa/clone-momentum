@@ -215,28 +215,142 @@ const player = {
 };
 
 player.name;
+
 console.log(player, console); // console도 object다
+
+function plus(number1, number2) {
+  console.log(number1 + number2);
+}
+
+// 원하는 코드를 캡슐화한 다음에 재사용 가능
+
+plus(2, 4);
 ```
 
 ## **2.11 Returns**
 
 ```jsx
-// 의미있는 프로퍼티 저장하기
-const player = {
-  name: "yujin",
-  age: 23,
+const calculator = {
+  plus: function (a, b) {
+    return a + b;
+  },
+  minus: function (a, b) {
+    return a - b;
+  },
+  times: function (a, b) {
+    return a * b;
+  },
+  divide: function (a, b) {
+    return a / b;
+  },
+  power: function (a, b) {
+    return a ** b;
+  },
 };
-
-player.name;
-console.log(player, console); // console도 object다
 ```
 
 ## **2.12 Recap**
 
+```jsx
+const calculator = {
+  plus: function (a, b) {
+    return a + b;
+  },
+  minus: function (a, b) {
+    return a - b;
+  },
+  times: function (a, b) {
+    return a * b;
+  },
+  divide: function (a, b) {
+    return a / b;
+  },
+  power: function (a, b) {
+    return a ** b;
+  },
+};
+
+const plusResult = calculator.plus(2 + 3);
+
+console.log(plusResult);
+```
+
 ## **2.13 Conditionals**
+
+```jsx
+// 조건문
+
+const age = prompt("How old are you?");
+
+console.log(typeof age); // 타입 확인
+console.log(typeof parseInt(age));
+
+age = parseInt(age);
+```
 
 ## **2.14 Conditionals part Two**
 
+```jsx
+// 조건문
+
+const age = prompt("How old are you?");
+
+console.log(typeof age); // 타입 확인
+console.log(typeof parseInt(age));
+
+age = parseInt(age);
+
+if (isNaN(age)) {
+  console.log("숫자로 적어주세요.");
+} else {
+  console.log(`${age}를 적어주셨습니다.`);
+}
+```
+
 ## **2.15 Conditionals part Three**
 
+```jsx
+// 조건문
+
+const age = prompt("How old are you?");
+
+console.log(typeof age); // 타입 확인
+console.log(typeof parseInt(age));
+
+age = parseInt(age);
+
+if (isNaN(age)) {
+  console.log("숫자로 적어주세요.");
+} else if (age < 18) {
+  console.log(`${age}세는 너무 어려요.`);
+} else if (age > 18 && age < 80) {
+  console.log(`${age}세는 운동을 하는 게 ...`);
+} else {
+  console.log(`${age}는 술을 마실 수 있어요.`);
+}
+```
+
 ## **2.16 Recap**
+
+```jsx
+// 조건문
+
+const age = prompt("How old are you?");
+
+console.log(typeof age); // 타입 확인
+console.log(typeof parseInt(age));
+
+age = parseInt(age);
+
+if (isNaN(age) || age > 0) {
+  console.log("나이를 올바르게 입력해 주세요");
+} else if (age < 18) {
+  console.log(`${age}세는 너무 어려요.`);
+} else if (age > 18 && age < 80) {
+  console.log(`${age}세는 운동을 하는 게 ...`);
+} else if (age === 100) {
+  console.log(`${age}세라니!`);
+} else {
+  console.log(`${age}는 술을 마실 수 있어요.`);
+}
+```
