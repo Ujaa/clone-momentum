@@ -354,3 +354,52 @@ if (isNaN(age) || age > 0) {
   console.log(`${age}는 술을 마실 수 있어요.`);
 }
 ```
+
+## **3.0 The Document Object**
+
+```jsx
+// document는 HTML 정보를 객체에 담아 javascript에서 사용할 수 있도록 돕는다.
+console.log(document.title);
+```
+
+## **3.1 HTML in Javascript**
+
+```jsx
+const title = document.getElementById("title");
+console.dir(title); //element를 자세히 살펴볼 수 있음
+
+title.innerText = "GRAB ME!";
+```
+
+## **3.2 Searching For Elements**
+
+```jsx
+const title = document.getElementsByClassName("title");
+console.log(title);
+
+const h1 = document.getElementsByTagName("h1");
+console.log(h1);
+
+// element를 CSS처럼 검색할 수 있음(CSS selector를 파라미터로 전달)
+const h1InDiv = document.querySelector(".hello h1"); // 1개만 return
+console.log(h1InDiv);
+
+const h1ListInDiv = document.querySelectorAll(".hello h1"); // 모두 찾아서 return
+console.log(h1ListInDiv);
+```
+
+## **3.3 Events**
+
+```jsx
+const title = document.querySelector(".hello h1");
+
+function handleTitleClick() {
+  console.log("title was clicked!");
+  title.style.color = "blue";
+}
+
+console.dir(title);
+
+// click 이벤트를 리슨하겠다고 알려주고, click가 발생하면 함수가 실행됨
+title.addEventListener("click", handleTitleClick);
+```
