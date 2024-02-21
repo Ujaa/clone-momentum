@@ -355,14 +355,14 @@ if (isNaN(age) || age > 0) {
 }
 ```
 
-## **3.0 The Document Object**
+## **The Document Object**
 
 ```jsx
 // document는 HTML 정보를 객체에 담아 javascript에서 사용할 수 있도록 돕는다.
 console.log(document.title);
 ```
 
-## **3.1 HTML in Javascript**
+## **HTML in Javascript**
 
 ```jsx
 const title = document.getElementById("title");
@@ -371,7 +371,7 @@ console.dir(title); //element를 자세히 살펴볼 수 있음
 title.innerText = "GRAB ME!";
 ```
 
-## **3.2 Searching For Elements**
+## **Searching For Elements**
 
 ```jsx
 const title = document.getElementsByClassName("title");
@@ -388,7 +388,7 @@ const h1ListInDiv = document.querySelectorAll(".hello h1"); // 모두 찾아서 
 console.log(h1ListInDiv);
 ```
 
-## **3.3 Events**
+## **Events**
 
 ```jsx
 const title = document.querySelector(".hello h1");
@@ -402,4 +402,136 @@ console.dir(title);
 
 // click 이벤트를 리슨하겠다고 알려주고, click가 발생하면 함수가 실행됨
 title.addEventListener("click", handleTitleClick);
+```
+
+## **Events part Two**
+
+```jsx
+const title = document.querySelector(".hello h1");
+
+function handleTitleClick() {
+  console.log("title was clicked!");
+  title.style.color = "blue";
+}
+
+function handleMouseEnter() {
+  console.log("Mouse was Entered!");
+  title.style.color = "red";
+}
+
+function handleMouseLeave() {
+  console.log("Mouse was Leaved!");
+  title.style.color = "black";
+}
+
+console.dir(title);
+
+title.addEventListener("click", handleTitleClick);
+title.addEventListener("mouseenter", handleMouseEnter);
+title.addEventListener("mouseleave", handleMouseLeave);
+```
+
+## **More Events**
+
+```jsx
+const title = document.querySelector(".hello h1");
+
+function handleTitleClick() {
+  console.log("title was clicked!");
+  title.style.color = "blue";
+}
+
+function handleMouseEnter() {
+  console.log("Mouse was Entered!");
+  title.style.color = "red";
+}
+
+function handleMouseLeave() {
+  console.log("Mouse was Leaved!");
+  title.style.color = "black";
+}
+
+function handleWindowResize() {
+  console.log("Window is Resized");
+  document.body.style.background = "tomato";
+}
+
+function handleCopy() {
+  alert("Copier");
+}
+
+console.dir(title);
+
+title.onclick = handleTitleClick;
+title.addEventListener("mouseenter", handleMouseEnter);
+title.addEventListener("mouseleave", handleMouseLeave);
+
+window.addEventListener("resize", handleWindowResize);
+window.addEventListener("copy", handleCopy);
+```
+
+## **CSS in Javascript**
+
+```jsx
+const title = document.querySelector("h1");
+
+function handleMouseClick() {
+  const currentColor = h1.style.color;
+  let newColor;
+
+  if (currentColor === "red") {
+    newColor = "yellow";
+  } else {
+    newColor = "red";
+  }
+
+  h1.style.color = newColor;
+}
+
+title.addEventListener("click", handleMouseClick);
+```
+
+## **CSS in Javascript part Two**
+
+```jsx
+const title = document.querySelector("h1");
+
+function handleMouseClick() {
+  const clickedClass = "active";
+  if (title.className === clickedClass) {
+    title.className = "";
+  } else {
+    title.className = clickedClass;
+  }
+}
+
+title.addEventListener("click", handleMouseClick);
+```
+
+## **CSS in Javascript part Three**
+
+```jsx
+const title = document.querySelector("h1");
+
+function handleMouseClick() {
+  const clickedClass = "active";
+  if (title.classList.contains(clickedClass)) {
+    title.classList.remove(clickedClass);
+  } else {
+    title.classList.add(clickedClass);
+  }
+}
+
+title.addEventListener("click", handleMouseClick);
+```
+
+```jsx
+const title = document.querySelector("h1");
+
+function handleMouseClick() {
+  const clickedClass = "active";
+  title.classList.toggle(clickedClass);
+}
+
+title.addEventListener("click", handleMouseClick);
 ```
